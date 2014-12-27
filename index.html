@@ -1,18 +1,87 @@
 <html>
-<head>
-	<script src = "js/storage/memory-store.js"></script>
-</head>
-<body>
+	<head>
+		<script src = "js/storage/memory-store.js"></script>
+		<link href="bootstrap-material-design-master/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bootstrap-material-design-master/dist/css/ripples.min.css" rel="stylesheet">
+	    <link href="bootstrap-material-design-master/dist/css/material-wfont.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="navbar navbar-inverse">
+		    <div class="navbar-header">
+		        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		        </button>
+		        <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+		    </div>
+		    <div class="navbar-collapse collapse navbar-inverse-collapse">
+		        <ul class="nav navbar-nav">
+		            <li class="active"><a href="javascript:void(0)">Active</a></li>
+		            <li><a href="javascript:void(0)">Link</a></li>
+		            <li class="dropdown">
+		                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		                <ul class="dropdown-menu">
+		                    <li><a href="javascript:void(0)">Action</a></li>
+		                    <li><a href="javascript:void(0)">Another action</a></li>
+		                    <li><a href="javascript:void(0)">Something else here</a></li>
+		                    <li class="divider"></li>
+		                    <li class="dropdown-header">Dropdown header</li>
+		                    <li><a href="javascript:void(0)">Separated link</a></li>
+		                    <li><a href="javascript:void(0)">One more separated link</a></li>
+		                </ul>
+		            </li>
+		        </ul>
+		        <form class="navbar-form navbar-left">
+		            <input type="text" class="form-control col-lg-8" placeholder="Search">
+		        </form>
+		        <ul class="nav navbar-nav navbar-right">
+		            <li><a href="javascript:void(0)">Link</a></li>
+		            <li class="dropdown">
+		                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		                <ul class="dropdown-menu">
+		                    <li><a href="javascript:void(0)">Action</a></li>
+		                    <li><a href="javascript:void(0)">Another action</a></li>
+		                    <li><a href="javascript:void(0)">Something else here</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="javascript:void(0)">Separated link</a></li>
+		                </ul>
+		            </li>
+		        </ul>
+		    </div>
+		</div>
+		<script id="home-tpl" type="text/x-handlebars-template">
+		    <div class='header'><h1>Home</h1></div>
+		    <div class = "SelectAddition">
+		    	<select id = "SelectField" onchange = "ChangeField()">
+		    		<option> Objective </option>
+		    		<option> Summary </option>
+		    		<option> Work Experience </option>
+		    		<option> Education </option>
+		    		<option> Volunteer Service </option>
+		    		<option> Extracurricular Activities </option>
+		    		<option> Awards / Certificates </option>
+		    		<option> Skills / Academic Achievement </option>
+		    		<option> Music / Artistic Achievement </option>
+		    		<option> Athletic Achievement </option>
+		    		<option> References </option>
+		    		<option> Leadership </option>
+		    		<option> Additional Information </option>
+		    	</select>
+		    </div>
+		</script>
+			<script id="employee-li-tpl" type="text/x-handlebars-template">
+		    {{#.}}
+		    <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
+		    {{/.}}
+		</script>
+		<div id = "ChangeBox">
+		</div>
+		<script src="lib/handlebars.js"></script>
+		<script src="phonegap.js"></script>
+		<script src="lib/jquery-1.8.2.min.js"></script>
+		<script src="js/storage/memory-store.js"></script>
+		<script src="js/main.js"></script>
 
-<div class='header'><h1>Home</h1></div>
-<div class='search-view'>
-<input class='search-key' type="text"/>
-<ul class='employee-list'></ul>
-</div>
-
-<script src="lib/jquery-1.8.2.min.js"></script>
-<script src="js/storage/memory-store.js"></script>
-<script src="js/main.js"></script>
-
-</body>
+	</body>
 </html>
